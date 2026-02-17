@@ -8,7 +8,7 @@ export default function WeChatFloat() {
             transition={{ duration: 0.5, delay: 1 }}
             className="fixed bottom-6 left-6 z-50 flex flex-col items-center gap-2"
         >
-            <a href="weixin://dl/chat?jflytravel" target="_blank" rel="noopener noreferrer">
+            <a href="https://u.wechat.com/kNvre4vSMhDJMY5G_ErfLFo?s=3" target="_blank" rel="noopener noreferrer">
                 <div className="bg-white p-2 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
                     <img
                         src="/images/wcht.jpeg"

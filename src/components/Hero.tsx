@@ -2,7 +2,9 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/constants";
 
+import { useLanguage } from '@/context/LanguageContext';
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-28 md:pt-32">
       {/* Background Image */}
@@ -29,7 +31,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-7xl font-bold text-white mb-6"
           >
-            Your Ultimate Getaway
+            {t('hero.title')}
           </motion.h1>
 
           <motion.p
@@ -38,7 +40,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-white/90 mb-12"
           >
-            Enjoy Your Holiday With Us
+            {t('hero.subtitle')}
           </motion.p>
 
           <motion.div
@@ -57,7 +59,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Explore Destinations
+                {t('hero.exploreDestinations')}
               </a>
             </Button>
             <Button
@@ -71,7 +73,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Learn More
+                {t('hero.learnMore')}
               </a>
             </Button>
           </motion.div>

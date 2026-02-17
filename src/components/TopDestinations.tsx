@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 
+import { useLanguage } from '@/context/LanguageContext';
 export default function TopDestinations() {
+  const { t } = useLanguage();
   const destinations = [
     {
       id: 1,
@@ -44,7 +46,7 @@ export default function TopDestinations() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800">
-            Top Destinations
+            {t('topDestinations.title')}
           </h2>
         </motion.div>
 
@@ -69,7 +71,7 @@ export default function TopDestinations() {
 
                 {/* Trip Badge */}
                 <div className="absolute top-4 left-4 bg-slate-700/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
-                  ({destination.trips} Trips)
+                  ({destination.trips} {t('topDestinations.trips')})
                 </div>
 
                 {/* Gradient Overlay */}

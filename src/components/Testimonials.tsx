@@ -1,7 +1,9 @@
 import { motion } from 'motion/react'
 import { Star, Quote } from 'lucide-react'
 
+import { useLanguage } from '@/context/LanguageContext';
 export default function Testimonials() {
+  const { t } = useLanguage();
   const testimonials = [
     {
       id: 1,
@@ -47,10 +49,10 @@ export default function Testimonials() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-            What Our Customers Say
+            {t('testimonials.title')}
           </h2>
           <p className="text-lg text-slate-600">
-            Real experiences from travelers who chose JFLY Travel
+            {t('testimonials.subtitle')}
           </p>
         </motion.div>
 

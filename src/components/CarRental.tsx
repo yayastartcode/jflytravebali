@@ -3,34 +3,36 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/constants";
 
+import { useLanguage } from '@/context/LanguageContext';
 export default function CarRental() {
+  const { t } = useLanguage();
   const vehicles = [
     {
-      title: "Book A Driver + Standard Minivan",
+      title: t('carRental.standardMinivan'),
       model: "TOYOTA AVANZA",
       price: 38,
-      duration: "10 hours/day",
+      duration: "10",
       image: "/images/avanzarm.webp",
-      capacityAirport: "Max 4 persons with luggage for airport transfer",
-      capacityTour: "Max 5 persons for tour",
+      capacityAirport: "Max 4",
+      capacityTour: "Max 5",
     },
     {
-      title: "Book A Driver + Big Van",
+      title: t('carRental.bigVan'),
       model: "TOYOTA HI-ACE",
       price: 80,
-      duration: "10 hours/day",
+      duration: "10",
       image: "/images/hiacerm.webp",
-      capacityAirport: "Max 11 persons with luggage for airport transfer",
-      capacityTour: "Max 15 persons for tour",
+      capacityAirport: "Max 11",
+      capacityTour: "Max 15",
     },
     {
-      title: "Book A Driver + Innova Car",
+      title: t('carRental.innovaCar'),
       model: "TOYOTA INNOVA REBORN",
       price: 65,
-      duration: "10 hours/day",
+      duration: "10",
       image: "/images/ino.jpeg",
-      capacityAirport: "Max 5 persons with luggage for airport transfer",
-      capacityTour: "Max 5 persons for tour",
+      capacityAirport: "Max 5",
+      capacityTour: "Max 5",
     },
   ];
 
@@ -76,13 +78,13 @@ export default function CarRental() {
 
               {/* Duration */}
               <p className="text-center text-blue-600 font-medium mb-6">
-                {vehicle.duration}
+                {vehicle.duration} {t('carRental.duration')}
               </p>
 
               {/* Capacity Details */}
               <div className="text-center text-sm text-slate-600 space-y-2 mb-6 min-h-[3rem]">
-                <p>{vehicle.capacityAirport}</p>
-                <p>{vehicle.capacityTour}</p>
+                <p>{vehicle.capacityAirport} {t('carRental.capacityAirport')}</p>
+                <p>{vehicle.capacityTour} {t('carRental.capacityTour')}</p>
               </div>
 
               {/* Read More Button */}
@@ -98,7 +100,7 @@ export default function CarRental() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center"
                 >
-                  READ MORE
+                  {t('carRental.readMore')}
                   <ArrowRight className="ml-2" size={18} />
                 </a>
               </Button>
@@ -115,10 +117,10 @@ export default function CarRental() {
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
-            Welcome to JFLY Travel,
+            {t('carRental.title')}
           </h2>
           <p className="text-lg text-slate-700 leading-relaxed">
-            JFLY Travel is a trusted travel agency ready to provide comfortable, exciting, and memorable trips. With professional service and utmost attention to customer comfort, JFLY Travel offers a variety of quality tour packages at affordable prices, so anyone can enjoy their dream vacation without worrying about the cost. Comfortable vacations, the best experiences, and affordable prices—it's all at JFLY Travel.
+            {t('carRental.welcomeDesc')}
           </p>
         </motion.div>
       </div>

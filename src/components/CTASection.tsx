@@ -2,7 +2,9 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/constants";
 
+import { useLanguage } from '@/context/LanguageContext';
 export default function CTASection() {
+  const { t } = useLanguage();
   return (
     <section className="py-0 bg-white">
       <div className="container mx-auto px-0">
@@ -17,10 +19,10 @@ export default function CTASection() {
           >
             <div className="max-w-md">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-                Need more customized tour?
+                {t('cta.title')}
               </h2>
               <p className="text-lg text-slate-700 mb-8">
-                Let's build together your tour based on your preferences
+                {t('cta.subtitle')}
               </p>
               <Button
                 asChild
@@ -32,7 +34,7 @@ export default function CTASection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  CONTACT US
+                  {t('cta.contactUs')}
                 </a>
               </Button>
             </div>

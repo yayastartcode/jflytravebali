@@ -8,7 +8,9 @@ import {
   Twitter,
 } from "lucide-react";
 
+import { useLanguage } from '@/context/LanguageContext';
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -29,12 +31,11 @@ export default function Footer() {
                 className="h-16 w-auto object-contain mb-2"
               />
               <p className="text-sm text-slate-300 italic">
-                Enjoy your holiday with us
+                {t('header.slogan')}
               </p>
             </div>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Your trusted partner for exploring Bali's breathtaking landscapes
-              and vibrant culture. Affordable car hire and personalized tours.
+              {t('footer.companyDesc')}
             </p>
           </motion.div>
 
@@ -45,14 +46,14 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
                   className="text-slate-300 hover:text-emerald-400 transition-colors text-sm"
                 >
-                  Home
+                  {t('header.home')}
                 </a>
               </li>
               <li>
@@ -60,7 +61,7 @@ export default function Footer() {
                   href="#about"
                   className="text-slate-300 hover:text-emerald-400 transition-colors text-sm"
                 >
-                  About Us
+                  {t('header.about')}
                 </a>
               </li>
               <li>
@@ -68,7 +69,7 @@ export default function Footer() {
                   href="#car-rental"
                   className="text-slate-300 hover:text-emerald-400 transition-colors text-sm"
                 >
-                  Car Rental
+                  {t('carRental.title')}
                 </a>
               </li>
               <li>
@@ -76,7 +77,7 @@ export default function Footer() {
                   href="#tour-packages"
                   className="text-slate-300 hover:text-emerald-400 transition-colors text-sm"
                 >
-                  Tour Packages
+                  {t('tourPackages.title')}
                 </a>
               </li>
               <li>
@@ -84,7 +85,7 @@ export default function Footer() {
                   href="#top-destinations"
                   className="text-slate-300 hover:text-emerald-400 transition-colors text-sm"
                 >
-                  Destinations
+                  {t('header.destinations')}
                 </a>
               </li>
             </ul>
@@ -97,7 +98,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.contactUs')}</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin
@@ -136,7 +137,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.followUs')}</h3>
             <div className="flex gap-4">
               <a
                 href="#"
@@ -172,7 +173,7 @@ export default function Footer() {
           className="border-t border-slate-700 pt-8 text-center"
         >
           <p className="text-slate-400 text-sm">
-            © {currentYear} JFLY Travel. All rights reserved.
+            © {currentYear} JFLY Travel. {t('footer.rightsReserved')}
           </p>
         </motion.div>
       </div>

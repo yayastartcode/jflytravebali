@@ -3,15 +3,18 @@ import { motion } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '@/lib/constants'
+import { useLanguage } from '@/context/LanguageContext'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   const navItems = [
-    { name: 'Home', href: '#' },
-    { name: 'Destinations', href: '#destinations' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('header.home'), href: '#' },
+    { name: t('header.destinations'), href: '#destinations' },
+    { name: t('header.about'), href: '#about' },
+    { name: t('header.contact'), href: '#contact' },
   ]
 
   return (
@@ -32,7 +35,7 @@ export default function Header() {
                 className="h-16 md:h-20 w-auto object-contain rounded-lg shadow-sm"
               />
               <span className="text-xs md:text-sm text-sky-100 mt-1 italic font-medium">
-                Enjoy your holiday with us
+                {t('header.slogan')}
               </span>
             </a>
           </motion.div>
@@ -46,7 +49,7 @@ export default function Header() {
           >
             {navItems.map((item, index) => (
               <motion.a
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -56,18 +59,20 @@ export default function Header() {
                 {item.name}
               </motion.a>
             ))}
+            <LanguageSwitcher />
             <Button
               asChild
               className="bg-white text-[#015af7] hover:bg-sky-50 transition-colors font-semibold"
             >
               <a href={getWhatsAppUrl(WHATSAPP_MESSAGES.general)} target="_blank" rel="noopener noreferrer">
-                Book Now
+                {t('header.bookNow')}
               </a>
             </Button>
           </motion.div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/* Mobile Menu Button - Includes Lang Switcher next to hamburger */}
+          <div className="md:hidden flex items-center gap-4">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
@@ -87,7 +92,7 @@ export default function Header() {
           >
             {navItems.map((item) => (
               <a
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 className="block text-white hover:text-sky-200 transition-colors font-medium text-lg text-center"
                 onClick={() => setIsMenuOpen(false)}
@@ -100,7 +105,7 @@ export default function Header() {
               className="w-full bg-white text-[#015af7] hover:bg-sky-50 transition-colors font-semibold"
             >
               <a href={getWhatsAppUrl(WHATSAPP_MESSAGES.general)} target="_blank" rel="noopener noreferrer">
-                Book Now
+                {t('header.bookNow')}
               </a>
             </Button>
           </motion.div>

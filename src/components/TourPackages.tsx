@@ -4,17 +4,38 @@ import { MapPin, Clock, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/constants";
 
+import { useLanguage } from '@/context/LanguageContext';
 export default function TourPackages() {
+  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Smart formatter for the people field
+  const formatPeople = (value: string) => {
+    // Numeric range like "1-3", "2-6"
+    if (/^\d+-\d+$/.test(value)) {
+      return `${value} ${t('tourPackages.people')}`;
+    }
+    // "min X pax" pattern
+    const minMatch = value.match(/^min\s+(\d+)\s+pax$/i);
+    if (minMatch) {
+      return t('tourPackages.minPax').replace('{count}', minMatch[1]);
+    }
+    // "included in price"
+    if (value.toLowerCase() === 'included in price') {
+      return t('tourPackages.includedInPrice');
+    }
+    // Fallback: return as-is
+    return value;
+  };
 
   const packages = [
     {
       id: 1,
       title: "Volcano Jeep Adventure and Ubud Tour",
       location: "Kintamani, Ubud",
-      duration: "10 Hours",
-      people: "2-6 People",
-      price: 60,
+      duration: "10",
+      people: "1-3",
+      price: 70,
       image: "/images/jip.jpeg",
       description:
         "Experience the black lava jeep adventure at the feet of Batur sacred volcano. This...",
@@ -24,8 +45,8 @@ export default function TourPackages() {
       id: 2,
       title: "Bali Gate of Heaven Temple Tour",
       location: "Candidasa, Ubud",
-      duration: "10 Hours",
-      people: "1-4 People",
+      duration: "10",
+      people: "1-4",
       price: 65,
       image: "/images/gate.jpeg",
       description:
@@ -36,9 +57,9 @@ export default function TourPackages() {
       id: 3,
       title: "Best of Ubud Tour with Jungle Swing",
       location: "Ubud",
-      duration: "10 Hours",
-      people: "2-6 People",
-      price: 50,
+      duration: "10",
+      people: "included in price",
+      price: 60,
       image: "/images/rmswing.webp",
       description:
         "Begin the tour by meeting your driver or tour guide at your hotel lobby with a war...",
@@ -48,9 +69,9 @@ export default function TourPackages() {
       id: 4,
       title: "West Nusa Penida Day Tour",
       location: "Nusa Penida",
-      duration: "10 Hours",
-      people: "2-6 People",
-      price: 65,
+      duration: "10",
+      people: "min 2 pax",
+      price: 55,
       image: "/images/rmwesnusa.webp",
       description:
         "Experience the most popular day trip to Nusa Penida the sister island of Bali. You will...",
@@ -60,8 +81,8 @@ export default function TourPackages() {
       id: 5,
       title: "Best of Bali Waterfalls: Tibumana, Tukad Cepung",
       location: "Ubud",
-      duration: "8 Hours",
-      people: "2-6 People",
+      duration: "8",
+      people: "2-6",
       price: 75,
       image: "/images/rmwater.webp",
       description:
@@ -101,10 +122,10 @@ export default function TourPackages() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-            Popular Tour Packages
+            {t('tourPackages.title')}
           </h2>
           <p className="text-lg text-slate-600">
-            Discover the best of Bali with our curated tour packages
+            {t('tourPackages.subtitle')}
           </p>
         </motion.div>
 
@@ -152,7 +173,7 @@ export default function TourPackages() {
                   {/* Featured Badge */}
                   {pkg.featured && (
                     <div className="absolute top-4 right-4 bg-yellow-400 text-slate-800 px-3 py-1 rounded-full text-sm font-medium z-10">
-                      Featured
+                      {t('tourPackages.featured')}
                     </div>
                   )}
 
@@ -180,11 +201,11 @@ export default function TourPackages() {
                       </div>
                       <div className="flex items-center text-sm text-slate-700">
                         <Clock size={16} className="mr-2 flex-shrink-0" />
-                        <span>{pkg.duration}</span>
+                        <span>{pkg.duration} {t('tourPackages.duration')}</span>
                       </div>
                       <div className="flex items-center text-sm text-slate-700">
                         <Users size={16} className="mr-2 flex-shrink-0" />
-                        <span>{pkg.people}</span>
+                        <span>{formatPeople(pkg.people)}</span>
                       </div>
                     </div>
 
@@ -212,7 +233,7 @@ export default function TourPackages() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        VIEW DETAILS
+                        {t('tourPackages.viewDetails')}
                       </a>
                     </Button>
                   </div>

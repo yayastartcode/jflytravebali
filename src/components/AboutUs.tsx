@@ -3,25 +3,27 @@ import { DollarSign, Truck, UserCheck, Palmtree } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from "@/lib/constants";
 
+import { useLanguage } from '@/context/LanguageContext';
 export default function AboutUs() {
+  const { t } = useLanguage();
   const services = [
     {
       icon: DollarSign,
-      title: "Affordable Car Hire",
+      title: t('about.affordableCar'),
       description:
-        "Competitive rates with well-maintained vehicles ensure you explore Bali with ease",
+        t('about.affordableCarDesc'),
     },
     {
       icon: Truck,
-      title: "Custom Tours",
+      title: t('about.customTours'),
       description:
-        "Tailor-made itineraries to suit your interests in nature, culture, or adventure.",
+        t('about.customToursDesc'),
     },
     {
       icon: UserCheck,
-      title: "Experienced Guides",
+      title: t('about.experiencedGuides'),
       description:
-        "Knowledgeable guides provide insights into Bali's history, culture, and natural beauty.",
+        t('about.experiencedGuidesDesc'),
     },
   ];
 
@@ -40,10 +42,7 @@ export default function AboutUs() {
           className="max-w-4xl mx-auto text-center mb-16"
         >
           <p className="text-lg text-slate-700 leading-relaxed">
-            Experience Bali's best with JFLY Travel. Affordable car hire and
-            personalized tours to explore Bali's stunning destinations.
-            <br />
-            Book now for an unforgettable journey!
+            {t('about.intro')}
           </p>
         </motion.div>
 
@@ -106,13 +105,11 @@ export default function AboutUs() {
           className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
-            Book a private car with driver in Bali for a day
+            {t('about.bookTitle')}
           </h2>
 
           <p className="text-lg text-slate-700 mb-8 leading-relaxed">
-            Discover any destination at your own pace & enjoy the freedom to
-            choose your own itinerary with a personal driver who will be there
-            for you at every stop
+            {t('about.bookDesc')}
           </p>
 
           <motion.div
@@ -124,7 +121,7 @@ export default function AboutUs() {
           >
 
             <p className="text-xl text-blue-600 font-medium">
-              you can go anywhere in areas we coverage!!!
+              {t('about.coverage')}
             </p>
           </motion.div>
 
@@ -146,7 +143,7 @@ export default function AboutUs() {
                 className="flex items-center"
               >
                 <Truck className="mr-2" size={20} />
-                Book Bali Personal Driver
+                {t('about.bookButton')}
               </a>
             </Button>
           </motion.div>

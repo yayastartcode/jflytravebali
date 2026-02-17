@@ -8,32 +8,29 @@ export default function Testimonials() {
     {
       id: 1,
       name: 'Emma Johnson',
-      location: 'United States',
+      location: t('testimonials.t1Location'),
       avatar: 'https://i.pravatar.cc/150?img=1',
       rating: 5,
-      comment:
-        'Amazing experience! Our driver was incredibly knowledgeable and friendly. We visited the most beautiful waterfalls and temples. Highly recommend this service for anyone visiting Bali!',
-      date: 'November 2025',
+      comment: t('testimonials.t1Comment'),
+      date: t('testimonials.t1Date'),
     },
     {
       id: 2,
       name: 'Michael Chen',
-      location: 'Singapore',
+      location: t('testimonials.t2Location'),
       avatar: 'https://i.pravatar.cc/150?img=12',
       rating: 5,
-      comment:
-        'The Volcano Jeep Adventure was the highlight of our trip! Professional service, comfortable vehicles, and breathtaking views. Worth every penny. Will definitely book again on our next visit.',
-      date: 'October 2025',
+      comment: t('testimonials.t2Comment'),
+      date: t('testimonials.t2Date'),
     },
     {
       id: 3,
       name: 'Sophia Harper',
-      location: 'Australia',
+      location: t('testimonials.t3Location'),
       avatar: 'https://i.pravatar.cc/150?img=5',
       rating: 5,
-      comment:
-        'Excellent service from start to finish. The jungle swing tour was incredible, and our guide made sure we got the best photos. Very affordable and well-organized. Thank you for the memories!',
-      date: 'December 2025',
+      comment: t('testimonials.t3Comment'),
+      date: t('testimonials.t3Date'),
     },
   ]
 

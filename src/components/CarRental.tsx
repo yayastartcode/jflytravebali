@@ -17,20 +17,20 @@ export default function CarRental() {
     {
       title: "Book A Driver + Big Van",
       model: "TOYOTA HI-ACE",
-      price: 85,
+      price: 80,
       duration: "10 hours/day",
       image: "/images/hiacerm.webp",
       capacityAirport: "Max 11 persons with luggage for airport transfer",
       capacityTour: "Max 15 persons for tour",
     },
     {
-      title: "Book A Driver + Luxury Car",
-      model: "TOYOTA ALPHARD",
-      price: 162,
+      title: "Book A Driver + Innova Car",
+      model: "TOYOTA INNOVA REBORN",
+      price: 65,
       duration: "10 hours/day",
-      image: "/images/rmalp.webp",
-      capacityAirport: "Max 4 persons with luggage for airport transfer",
-      capacityTour: "Max 6 persons for tour",
+      image: "/images/ino.jpeg",
+      capacityAirport: "Max 5 persons with luggage for airport transfer",
+      capacityTour: "Max 5 persons for tour",
     },
   ];
 
@@ -115,14 +115,10 @@ export default function CarRental() {
           className="max-w-4xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
-            Welcome to Rama Bali Tour,
+            Welcome to JFLY Travel,
           </h2>
           <p className="text-lg text-slate-700 leading-relaxed">
-            your trusted partner for exploring Bali's breathtaking landscapes
-            and vibrant culture. We offer reliable and affordable car hire
-            services, as well as personalized tour packages tailored to your
-            interests. Whether you're seeking iconic landmarks, hidden gems, or
-            thrilling adventures, we've got the perfect package for you.
+            JFLY Travel is a trusted travel agency ready to provide comfortable, exciting, and memorable trips. With professional service and utmost attention to customer comfort, JFLY Travel offers a variety of quality tour packages at affordable prices, so anyone can enjoy their dream vacation without worrying about the cost. Comfortable vacations, the best experiences, and affordable prices—it's all at JFLY Travel.
           </p>
         </motion.div>
       </div>

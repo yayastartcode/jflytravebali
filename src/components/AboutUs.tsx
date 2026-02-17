@@ -40,7 +40,7 @@ export default function AboutUs() {
           className="max-w-4xl mx-auto text-center mb-16"
         >
           <p className="text-lg text-slate-700 leading-relaxed">
-            Experience Bali's best with Rama Bali Tour. Affordable car hire and
+            Experience Bali's best with JFLY Travel. Affordable car hire and
             personalized tours to explore Bali's stunning destinations.
             <br />
             Book now for an unforgettable journey!
@@ -122,9 +122,7 @@ export default function AboutUs() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-8"
           >
-            <p className="text-2xl md:text-3xl font-bold text-emerald-600 mb-2">
-              For Only 38 USD or 600K
-            </p>
+
             <p className="text-xl text-blue-600 font-medium">
               you can go anywhere in areas we coverage!!!
             </p>

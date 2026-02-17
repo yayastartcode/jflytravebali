@@ -15,7 +15,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#015af7] shadow-sm">
       <nav className="container mx-auto px-6 py-3 md:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -26,12 +26,12 @@ export default function Header() {
             className="flex items-center"
           >
             <a href="/" className="flex flex-col items-start">
-              <img 
-                src="/images/ramalg.png" 
-                alt="Ramatur Logo" 
-                className="h-16 md:h-20 w-auto object-contain"
+              <img
+                src="/images/jlg.jpg"
+                alt="JFLY Travel Logo"
+                className="h-16 md:h-20 w-auto object-contain rounded-lg shadow-sm"
               />
-              <span className="text-xs md:text-sm text-slate-600 mt-1 italic">
+              <span className="text-xs md:text-sm text-sky-100 mt-1 italic font-medium">
                 Enjoy your holiday with us
               </span>
             </a>
@@ -51,14 +51,14 @@ export default function Header() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-                className="text-slate-700 hover:text-emerald-600 transition-colors font-medium"
+                className="text-white hover:text-sky-200 transition-colors font-medium text-lg"
               >
                 {item.name}
               </motion.a>
             ))}
-            <Button 
+            <Button
               asChild
-              className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700"
+              className="bg-white text-[#015af7] hover:bg-sky-50 transition-colors font-semibold"
             >
               <a href={getWhatsAppUrl(WHATSAPP_MESSAGES.general)} target="_blank" rel="noopener noreferrer">
                 Book Now
@@ -70,7 +70,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-700 p-2"
+              className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -83,21 +83,21 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pb-4 space-y-4"
+            className="md:hidden mt-4 pb-4 space-y-4 border-t border-white/20 pt-4"
           >
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block text-slate-700 hover:text-emerald-600 transition-colors font-medium"
+                className="block text-white hover:text-sky-200 transition-colors font-medium text-lg text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
-            <Button 
+            <Button
               asChild
-              className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700"
+              className="w-full bg-white text-[#015af7] hover:bg-sky-50 transition-colors font-semibold"
             >
               <a href={getWhatsAppUrl(WHATSAPP_MESSAGES.general)} target="_blank" rel="noopener noreferrer">
                 Book Now

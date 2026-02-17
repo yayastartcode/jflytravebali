@@ -1,9 +1,9 @@
 // WhatsApp Configuration
-export const WHATSAPP_NUMBER = "6287842216006"; // Replace with actual WhatsApp number (include country code without +)
+export const WHATSAPP_NUMBER = "6285119333995"; // Replace with actual WhatsApp number (include country code without +)
 
 // WhatsApp Message Templates
 export const WHATSAPP_MESSAGES = {
-  general: "Hi! I would like to know more about Rama Bali Tour services.",
+  general: "Hi! I would like to know more about JFLY Travel services.",
   bookDriver: "Hi! I would like to book a personal driver in Bali.",
   carRental: (carType: string) =>
     `Hi! I would like to inquire about renting a ${carType}.`,

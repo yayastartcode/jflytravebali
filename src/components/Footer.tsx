@@ -24,8 +24,8 @@ export default function Footer() {
           >
             <div className="mb-4">
               <img
-                src="/images/ramalg.png"
-                alt="Ramatur Logo"
+                src="/images/jlg.jpg"
+                alt="JFLY Travel Logo"
                 className="h-16 w-auto object-contain mb-2"
               />
               <p className="text-sm text-slate-300 italic">
@@ -105,7 +105,7 @@ export default function Footer() {
                   className="mr-2 mt-1 flex-shrink-0 text-emerald-400"
                 />
                 <span className="text-slate-300 text-sm">
-                  Ubud, Bali, Indonesia
+                  JL.TUNJUNG SARI GG MENURI 1A, Bali, Indonesia
                 </span>
               </li>
               <li className="flex items-start">
@@ -114,7 +114,7 @@ export default function Footer() {
                   className="mr-2 mt-1 flex-shrink-0 text-emerald-400"
                 />
                 <span className="text-slate-300 text-sm">
-                  +62 878-4221-6006
+                  +62 85119333995
                 </span>
               </li>
               <li className="flex items-start">
@@ -123,7 +123,7 @@ export default function Footer() {
                   className="mr-2 mt-1 flex-shrink-0 text-emerald-400"
                 />
                 <span className="text-slate-300 text-sm">
-                  321ramawijaya@gmail.com
+                  jflytravel@gmail.com
                 </span>
               </li>
             </ul>
@@ -153,7 +153,7 @@ export default function Footer() {
                 <Instagram size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/jflytravel/"
                 className="bg-slate-700 hover:bg-emerald-600 p-3 rounded-full transition-colors"
                 aria-label="Twitter"
               >
@@ -172,7 +172,7 @@ export default function Footer() {
           className="border-t border-slate-700 pt-8 text-center"
         >
           <p className="text-slate-400 text-sm">
-            © {currentYear} Your Bali Vacation. All rights reserved.
+            © {currentYear} JFLY Travel. All rights reserved.
           </p>
         </motion.div>
       </div>

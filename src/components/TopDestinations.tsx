@@ -7,7 +7,7 @@ export default function TopDestinations() {
       name: "Nusa Penida",
       trips: 2,
       image:
-        "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/s836dd7wi18s8igivspg/TripSehariankeNusaPenidadariBali-KlookIndonesia.jpg",
+        "images/nusa.jpeg",
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ export default function TopDestinations() {
       name: "Candidasa",
       trips: 2,
       image:
-        "https://mediaim.expedia.com/destination/1/b90bb6101ca8a0c6b99e3032b823fbb2.jpg",
+        "images/bdg.jpeg",
     },
   ];
 

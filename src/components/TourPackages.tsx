@@ -14,8 +14,8 @@ export default function TourPackages() {
       location: "Kintamani, Ubud",
       duration: "10 Hours",
       people: "2-6 People",
-      price: 70,
-      image: "/images/rmjeep.webp",
+      price: 60,
+      image: "/images/jip.jpeg",
       description:
         "Experience the black lava jeep adventure at the feet of Batur sacred volcano. This...",
       featured: true,
@@ -25,9 +25,9 @@ export default function TourPackages() {
       title: "Bali Gate of Heaven Temple Tour",
       location: "Candidasa, Ubud",
       duration: "10 Hours",
-      people: "2-6 People",
+      people: "1-4 People",
       price: 65,
-      image: "/images/rmgate.webp",
+      image: "/images/gate.jpeg",
       description:
         "Join this early morning trip to the east side of Bali. Lempuyang Temple is one o...",
       featured: false,
@@ -228,11 +228,10 @@ export default function TourPackages() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    currentSlide === index
-                      ? "w-8 bg-slate-800"
-                      : "w-2 bg-slate-300 hover:bg-slate-400"
-                  }`}
+                  className={`h-2 rounded-full transition-all ${currentSlide === index
+                    ? "w-8 bg-slate-800"
+                    : "w-2 bg-slate-300 hover:bg-slate-400"
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}

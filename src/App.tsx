@@ -8,6 +8,7 @@ import CTASection from '@/components/CTASection'
 import Testimonials from '@/components/Testimonials'
 import Footer from '@/components/Footer'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
+import WeChatFloat from '@/components/WeChatFloat'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Testimonials />
       <Footer />
       <WhatsAppFloat />
+      <WeChatFloat />
     </div>
   )
 }

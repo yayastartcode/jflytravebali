@@ -11,6 +11,8 @@ export default function LanguageSwitcher() {
     const languages = [
         { code: "en", label: "English", flag: "🇺🇸" },
         { code: "zh", label: "中文", flag: "🇨🇳" },
+        { code: "ar", label: "العربية", flag: "🇸🇦" },
+        { code: "ru", label: "Русский", flag: "🇷🇺" },
     ];
 
     return (

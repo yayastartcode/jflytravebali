@@ -15,7 +15,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     // Load language from local storage on mount
     useEffect(() => {
         const savedLang = localStorage.getItem("language") as Language;
-        if (savedLang && (savedLang === "en" || savedLang === "zh")) {
+        if (savedLang && (savedLang === "en" || savedLang === "zh" || savedLang === "ar" || savedLang === "ru")) {
             setLanguage(savedLang);
         }
     }, []);
@@ -23,6 +23,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     // Save language to local storage whenever it changes
     useEffect(() => {
         localStorage.setItem("language", language);
+        // Set RTL for Arabic
+        document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+        document.documentElement.lang = language;
     }, [language]);
 
     const t = (key: string) => {
